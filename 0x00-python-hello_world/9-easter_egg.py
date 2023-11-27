@@ -1,1 +1,2 @@
-print("".join(__import__('this').s))
+#!/usr/bin/python3
+import this
