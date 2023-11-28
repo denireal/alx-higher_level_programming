@@ -7,22 +7,6 @@ character string as an argument and prints the uppercase version of
 each lowercase letter in the string.
 """
 
-def _upper(char):
-    """
-    Converts a lowercase character to uppercase.
-
-    Args:
-        char (str): The input character.
-
-    Returns:
-        int: The ASCII code of the uppercase character.
-    """
-    if 'a' <= char <= 'z':
-        return ord(char) - 32
-    else:
-        return ord(char)
-
-
 def uppercase(input_str):
     """
     Prints the uppercase version of the input string followed by a new line.
@@ -34,5 +18,6 @@ def uppercase(input_str):
 
     for char in input_str:
         # Convert each character to uppercase without using str.upper()
-        result_str += "%c" % _upper(char)
-    print(result_str)
+        result_str += chr(ord(char) - 32) if 'a' <= char <= 'z' else char
+
+    print("{:s}".format(result_str))
