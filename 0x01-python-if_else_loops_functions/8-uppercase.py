@@ -14,16 +14,18 @@ def uppercase(str):
         str: a character string argument
     """
 
-    for letter in str:
-        ascii_letter_code = ord(letter)
+    # For each character in input_str
+    for char in str:
 
-        # Check if the letter is lowercase
-        if ascii_letter_code in range(97, 123):
-            # Convert the letter to uppercase by subtracting 32 from the ASCII code
-            ascii_letter_code = ascii_letter_code - 32
+        # Get the character's ASCII code
+        ascii_char_code = ord(char)
 
-        # Print the uppercase letter
-        print("{:c}".format(ascii_letter_code), end="")
+        # If the character is in the lowercase range
+        if 97 <= ascii_char_code <= 122:
 
-    # Print a newline character after processing the entire string
+            # Convert it to the uppercase value
+            ascii_char_code -= 32
+
+        # Print out the uppercase value as a character
+        print("{:c}".format(ascii_char_code), end="")
     print()
