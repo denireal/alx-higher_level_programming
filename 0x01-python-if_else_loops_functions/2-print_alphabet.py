@@ -5,7 +5,10 @@ Description: This script prints all lowercase letters from 'a' to 'z'
              using their corresponding ASCII codes.
 """
 
-# Iterate over ASCII codes for lowercase letters (97 to 122)
-for ascii_code in range(97, 123):
-    # Print the character corresponding to the current ASCII code
-	print("{:c}".format(ascii_code), end='')
+current_ascii = ord('a')
+
+while current_ascii <= ord('z'):
+    print("{:s}".format(chr(current_ascii)), end="")
+    current_ascii += 1
+
+print()  # Add a newline after printing the alphabet
