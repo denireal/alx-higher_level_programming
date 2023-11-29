@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def remove_char_at(str, n):
     """
     Removes a character at the specified index from the given string.
@@ -12,7 +13,7 @@ def remove_char_at(str, n):
     - str: The modified string after removing the character at the specified index.
     """
     if n < 0:
-        return str
+        return (str)
     else:
         result_str = str[:n] + str[n + 1:]
-        return result_str
+        return (result_str)
