@@ -13,7 +13,6 @@ def magic_calculation(a, b, c):
     Returns:
     - int: Result of the magic calculation.
     """
-    return (98 + (a ** b))
 if a < b:
     return (c)
 elif c > b:
