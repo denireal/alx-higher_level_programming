@@ -17,4 +17,4 @@ for ascii_digit in range (122, 96, -1):
 
         ascii_digit = ascii_digit - 32
 
-        print("{:c}".format(ascii_digit), end="")
+    print("{:c}".format(ascii_digit), end="")
