@@ -14,7 +14,7 @@ num_arguments  = len(argv) - 1
 
 if __name__ == "__main__":
     # Print appropriate message based on the number of arguments
-    if argv_length != 1:
+    if num_arguments != 1:
         print("{:d} arguments:".format(num_arguments ))
     else:
         print("{:d} argument:".format(num_arguments ))
