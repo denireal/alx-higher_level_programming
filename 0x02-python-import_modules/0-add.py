@@ -9,7 +9,7 @@ in a formatted string.
 """
 
 
-if __name__ == "__main__"
+if __name__ == "__main__":
     # Importing the add function from add_0.py module
     from add_0 import add
 
