@@ -13,7 +13,6 @@ def replace_in_list(my_list, idx, element):
 
     Returns:
     - The modified list after replacing the element, or the original list
-	- if the index is out of bounds.
     """
     # Check if the index is out of bounds
     if idx < 0 or idx >= len(my_list):
