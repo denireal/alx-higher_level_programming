@@ -3,8 +3,7 @@
 
 def replace_in_list(my_list, idx, element):
     """
-    Replaces the element at the specified index in the given list with
-	a new element.
+    Replaces the element at the specified index in the given list.
 
     Args:
     - my_list (list): The list in which to replace the element.
