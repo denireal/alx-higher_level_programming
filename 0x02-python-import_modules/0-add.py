@@ -18,4 +18,4 @@ if __name__ == "__main__":
     b = 2
 
     # Calling add func and printing result in a formatted string
-    print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
+    print("{} + {} = {}".format(a, b, add(a, b)))
