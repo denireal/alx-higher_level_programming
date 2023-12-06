@@ -10,7 +10,7 @@ def roman_to_int(roman_string):
 
     Returns:
     - int: The integer equivalent of the Roman numeral. Returns 0 if the
-	input is not a non-empty string.
+    input is not a non-empty string.
     """
     # Check if the input is a non-empty string
     if type(roman_string) != str or not roman_string:
