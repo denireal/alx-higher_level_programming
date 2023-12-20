@@ -1,44 +1,55 @@
 #!/usr/bin/python3
 
-"""
-This script defines a Python class named Square with properties
-to get and set the size, methods to calculate the area and print
-a representation of the square.
-"""
+"""Square Class.
 
+It contains a class that defines a square.
 
+Usage Example:
+
+    Square = __import__('5-square').Square
+
+    my_square = Square(3)
+    print(type(my_square))
+    print(my_square.__dict__)
+"""
 
 class Square:
-    def __init__(self, size=0):
-        """
-        Constructor method to initialize the size of the square.
+    """Defines the blueprint of a square.
 
-        Parameters:
-        - size (int): The size of the square (default is 0).
+    Attributes:
+        size (int): An integer indicating the size of the square object.
+    """
+
+    def __init__(self, size=0):
+        """Object constructor method.
+
+        Initializes Square with a given size.
+
+        Args:
+            size (int): An integer representing the object size.
+                Defaults to 0.
+
+        Raises:
+            TypeError: If size is not an integer.
+            ValueError: If size is less than 0.
         """
-        self.__size = size
+        self.size = size
 
     @property
     def size(self):
-        """
-        Property to get the size of the square.
-
-        Returns:
-        int: The size of the square.
-        """
+        """Retrieves the size of the square."""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """
-        Property setter to set the size of the square.
+        """Sets the size of the square.
 
-        Parameters:
-        - value (int): The new size of the square.
+        Args:
+            value (int): The size to set.
 
         Raises:
-        - TypeError: If the value is not an integer.
-        - ValueError: If the value is less than 0.
+            TypeError: If size is not an integer.
+            ValueError: If size is less than 0.
         """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
@@ -47,20 +58,12 @@ class Square:
         self.__size = value
 
     def area(self):
-        """
-        Calculate and return the area of the square.
-
-        Returns:
-        int: The area of the square.
-        """
+        """Calculate and return the area of the square."""
         return self.__size ** 2
 
     def my_print(self):
-        """
-        Print a representation of the square using the "#" character.
-        """
+        """Prints the square using '#' character."""
         for row in range(self.size):
-            for column in range(self.size):
-                print("#", end="\n" if column == self.size - 1 and
-				row != column else "")
+            for col in range(self.size):
+                print("#", end="\n" if col == self.size - 1 and row != col else "")
         print()
