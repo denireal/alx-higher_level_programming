@@ -1,34 +1,42 @@
 #!/usr/bin/python3
+"""Square Module.
 
-"""
-This script defines a Python class named Square with a constructor
-to initialize the size of a square.
+This module defines a Python class named Square.
 
 Usage Example:
 
-    Square = __import__('2-square').Square
+    from 2-square import Square
 
+    # Create an instance of the Square class with size 3
     my_square = Square(3)
+
+    # Print the type and dictionary representation of the instance
     print(type(my_square))
     print(my_square.__dict__)
-
 """
 
-
 class Square:
-    def __init__(self, size=0):
-        """
-        Constructor method to initialize the size of the square.
+    """Defines the blueprint of a square.
 
-        Parameters:
-        - size (int): The size of the square (default is 0).
+    Attribute:
+        size (int): An integer indicating the size of the square object.
+    """
+
+    def __init__(self, size=0):
+        """An object constructor method.
+
+        Initializes Square with a given size.
+
+        Args:
+            size (int): An integer representing the object size.
+                Defaults to 0.
 
         Raises:
-        - TypeError: If size is not an integer.
-        - ValueError: If size is less than 0.
+            TypeError: If size is not an integer.
+            ValueError: If size is less than 0.
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
-        elif size < 0:
+        if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
