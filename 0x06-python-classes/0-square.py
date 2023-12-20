@@ -14,6 +14,8 @@ Usage Example:
     print(my_square)
 """
 
+
+
 class Square:
     """Defines the blueprint of a square."""
     pass
