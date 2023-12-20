@@ -3,6 +3,15 @@
 """
 This script defines a Python class named Square with a constructor
 to initialize the size of a square.
+
+Usage Example:
+
+    Square = __import__('2-square').Square
+
+    my_square = Square(3)
+    print(type(my_square))
+    print(my_square.__dict__)
+
 """
 
 
