@@ -3,19 +3,38 @@
 """
 This script defines a Python class named Square with methods
 to initialize the size and calculate the area of a square.
+
+
+Usage Example:
+
+    from <module_name> import Square
+
+    # Create an instance of the Square class with a specified size
+    my_square = Square(size)
+
+    # Calculate and print the area of the square
+    print(my_square.area())
 """
 
 class Square:
-    def __init__(self, size=0):
-        """
-        Constructor method to initialize the size of the square.
+    """Defines the blueprint of a square.
 
-        Parameters:
-        - size (int): The size of the square (default is 0).
+    Attributes:
+        size (int): An integer indicating the size of the square object.
+    """
+
+    def __init__(self, size=0):
+        """Object constructor method.
+
+        Initializes Square with a given size.
+
+        Args:
+            size (int): An integer representing the object size.
+                Defaults to 0.
 
         Raises:
-        - TypeError: If size is not an integer.
-        - ValueError: If size is less than 0.
+            TypeError: If size is not an integer.
+            ValueError: If size is less than 0.
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -24,10 +43,5 @@ class Square:
         self.__size = size
 
     def area(self):
-        """
-        Calculate and return the area of the square.
-
-        Returns:
-        int: The area of the square.
-        """
-        return self.__size * self.__size
+        """Calculate and return the area of the square."""
+        return self.__size ** 2
