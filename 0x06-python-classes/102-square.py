@@ -1,132 +1,136 @@
 #!/usr/bin/python3
 
 """
-This script defines a Python class named Square.
-Square represents a square with a specified size and includes comparison
-operators based on the areas of two squares.
+This module defines the Square class, representing a square
+with a specified size.
+It includes methods for calculating the area and implementing various
+comparison operators.
 """
 
-
-
 class Square:
+    """
+    Defines the blueprint of a square.
+
+    Attributes:
+        size (int): An integer representing the object size.
+    """
+
     def __init__(self, size=0):
         """
-        Constructor method to initialize a Square.
+        Initializes a Square object.
 
-        Parameters:
-        - size (int): The size of the square (default is 0).
+        Args:
+            size (int): The size of the square (default is 0).
         """
-        self.size = size
+        self.__size = size
 
     @property
     def size(self):
         """
-        Property to get the size of the square.
+        Gets the size private attribute value.
 
         Returns:
-        int: The size of the square.
+            int: The size private attribute.
         """
         return self.__size
 
     @size.setter
     def size(self, value):
         """
-        Property setter to set the size of the square.
+        Sets the size private attribute value.
 
-        Parameters:
-        - value (int): The new size of the square.
+        Validates the assignment of the size private attribute.
+
+        Args:
+            value (int): The value to be set.
 
         Raises:
-        - TypeError: If the value is not an integer.
-        - ValueError: If the value is less than 0.
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than 0.
         """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
 
     def area(self):
         """
-        Calculate and return the area of the square.
+        Calculates and returns the area of the square.
 
         Returns:
-        int: The area of the square.
+            int: The current square area.
         """
-        return self.__size * self.__size
+        return self.__size**2
 
-    def __eq__(self, other):
+    def __eq__(self, o):
         """
-        Equality comparison based on the areas of two squares.
+        Defines the == comparison.
 
-        Parameters:
-        - other (Square): The other square to compare.
+        Args:
+            o (Square): The other square to compare.
 
         Returns:
-        bool: True if the areas are equal, False otherwise.
+            bool: True if sizes are equal, False otherwise.
         """
-        return self.area() == other.area()
+        return self.__size == o.__size
 
-    def __ne__(self, other):
+    def __ne__(self, o):
         """
-        Inequality comparison based on the areas of two squares.
+        Defines the != comparison.
 
-        Parameters:
-        - other (Square): The other square to compare.
+        Args:
+            o (Square): The other square to compare.
 
         Returns:
-        bool: True if the areas are not equal, False otherwise.
+            bool: True if sizes are not equal, False otherwise.
         """
-        return self.area() != other.area()
+        return self.__size != o.__size
 
-    def __lt__(self, other):
+    def __gt__(self, o):
         """
-        Less than comparison based on the areas of two squares.
+        Defines the > comparison.
 
-        Parameters:
-        - other (Square): The other square to compare.
+        Args:
+            o (Square): The other square to compare.
 
         Returns:
-        bool: True if the area of self is less than the area of
-		-other, False otherwise.
+            bool: True if the size is greater, False otherwise.
         """
-        return self.area() < other.area()
+        return self.__size > o.__size
 
-    def __le__(self, other):
+    def __ge__(self, o):
         """
-        Less than or equal to comparison based on the areas of two squares.
+        Defines the >= comparison.
 
-        Parameters:
-        - other (Square): The other square to compare.
+        Args:
+            o (Square): The other square to compare.
 
         Returns:
-        bool: True if the area of self is less than or equal to the area
-		- of other, False otherwise.
+            bool: True if the size is greater or equal, False otherwise.
         """
-        return self.area() <= other.area()
+        return self.__size >= o.__size
 
-    def __gt__(self, other):
+    def __lt__(self, o):
         """
-        Greater than comparison based on the areas of two squares.
+        Defines the < comparison.
 
-        Parameters:
-        - other (Square): The other square to compare.
+        Args:
+            o (Square): The other square to compare.
 
         Returns:
-        bool: True if the area of self is greater than the area of other,
-		- False otherwise.
+            bool: True if the size is smaller, False otherwise.
         """
-        return self.area() > other.area()
+        return self.__size < o.__size
 
-    def __ge__(self, other):
+    def __le__(self, o):
         """
-        Greater than or equal to comparison based on the areas of two squares.
+        Defines the <= comparison.
 
-        Parameters:
-        - other (Square): The other square to compare.
+        Args:
+            o (Square): The other square to compare.
 
         Returns:
-        bool: True if the area of self is greater than or equal to the
-		- area of other, False otherwise.
+            bool: True if the size is smaller or equal, False otherwise.
         """
-        return self.area() >= other.area()
+        return self.__size <= o.__size
