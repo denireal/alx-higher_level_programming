@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
+
 """
 This module defines the MagicClass, which represents a geometric shape with
 a specified radius.
 It provides methods for calculating the area and circumference of the shape.
 """
-
 
 
 import math
@@ -21,7 +21,7 @@ class MagicClass:
         Constructor method for initializing a MagicClass instance.
 
         Parameters:
-        - radius (int or float): Radius of the geometric shape (default is 0)
+        - radius (int or float): Radius of the geometric shape
         """
         self.__radius = 0
         if type(radius) not in {int, float}:
@@ -39,7 +39,7 @@ class MagicClass:
 
     def circumference(self):
         """
-        Compute and return the circumference of the geometric shape.
+        Compute and return circumference of the geometric shape.
 
         Returns:
         float: The circumference of the geometric shape.
