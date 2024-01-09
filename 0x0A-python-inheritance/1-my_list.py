@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+"""
+Custom list class that inherits from the built-in list class.
+"""
+
 
 class MyList(list):
     """
-    Custom list class that inherits from the built-in list class.
-
     Attributes:
         Inherits all attributes and methods from the list class.
 
