@@ -6,6 +6,7 @@ Create a Square class based on Rectangle.
 
 Rectangle = __import__('9-rectangle').Rectangle
 
+
 class Square(Rectangle):
     """
     Class representing a square.
