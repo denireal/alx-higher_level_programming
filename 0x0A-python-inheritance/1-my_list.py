@@ -15,13 +15,13 @@ class MyList(list):
 
     def print_sorted(self):
     """
-        Print the elements of the list in sorted order.
+    Print the elements of the list in sorted order.
 
-        Args:
-            self: The MyList object.
+    Args:
+        self: The MyList object.
 
-        Returns:
-            None
-        """
-        new_list = sorted(self)
-        print("{}".format(new_list))
+    Returns:
+        None
+    """
+    new_list = sorted(self)
+    print("{}".format(new_list))
