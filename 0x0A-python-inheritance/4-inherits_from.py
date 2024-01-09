@@ -3,6 +3,7 @@
 Check if the given object is a subclass instance of the specified class.
 """
 
+
 def inherits_from(obj, a_class):
     """
     Args:
