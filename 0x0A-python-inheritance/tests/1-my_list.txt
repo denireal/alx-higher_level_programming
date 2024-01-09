@@ -9,7 +9,7 @@ Import the class:
 
     >>> MyList = __import__('1-my_list').MyList
 
-Now test it:
+Test with the following it:
 
     >>> my_list = MyList()
 
