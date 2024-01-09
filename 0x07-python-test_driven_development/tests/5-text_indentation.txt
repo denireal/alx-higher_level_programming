@@ -1,0 +1,52 @@
+The ``text_indentation`` Function Test
+=====================================
+
+Using ``text_indentation``
+--------------------------
+
+Importing the function from the module:
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Testing with a simple text containing multiple sentences:
+
+>>> text_indentation("This is a sample text. It contains multiple sentences: each separated by punctuation marks.")
+# Output:
+# This is a sample text.
+#
+# It contains multiple sentences: each separated by punctuation marks.
+
+Testing with an empty string:
+
+>>> text_indentation("")
+# Output:
+
+Testing with a text containing a single sentence:
+
+>>> text_indentation("Hello, world!")
+# Output:
+# Hello, world!
+
+Testing with a text containing multiple sentences separated by different punctuation marks:
+
+>>> text_indentation("Sentence one. Sentence two? Sentence three: the end.")
+# Output:
+# Sentence one.
+#
+# Sentence two?
+#
+# Sentence three: the end.
+
+Testing with a non-string input:
+
+>>> text_indentation(123)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+Testing with None as input:
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
