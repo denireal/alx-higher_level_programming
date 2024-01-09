@@ -10,11 +10,11 @@ class MyList(list):
         Inherits all attributes and methods from the list class.
 
     Methods:
-        print_sorted(self): Print the elements of the list in sorted order.
+    print_sorted(self): Print the elements of the list in sorted order.
     """
 
     def print_sorted(self):
-        """
+    """
         Print the elements of the list in sorted order.
 
         Args:
