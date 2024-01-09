@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Create a Square class based on Rectangle.
+Module defining a Square class based on Rectangle.
 """
 
 
@@ -9,7 +9,7 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 class Square(Rectangle):
     """
-    Class representing a square.
+    Represents a square, inheriting from Rectangle.
 
     Attributes:
         __size (int): Size of the square.
@@ -17,17 +17,18 @@ class Square(Rectangle):
 
     def __init__(self, size):
         """
-        Initialize a Square instance.
+        Initializes a Square instance.
 
         Args:
             size (int): Size of the square.
         """
         self.integer_validator("size", size)
         self.__size = size
+        super().__init__(size, size)
 
     def area(self):
         """
-        Calculate the area of the square.
+        Calculates the area of the square.
 
         Returns:
             int: The area of the square.
@@ -36,10 +37,9 @@ class Square(Rectangle):
 
     def __str__(self):
         """
-        Get a string representation of the Square.
+        Gets a string representation of the Square.
 
         Returns:
-            str: A string representating "[Square] {size}/{size}".
+            str: A string representation in the format "[Square] {size}/{size}".
         """
-        return ("[{}] {}/{}".format(type(self).__name__,
-                                    self.__size, self.__size))
+        return "[Square] {}/{}".format(self.__size, self.__size)
