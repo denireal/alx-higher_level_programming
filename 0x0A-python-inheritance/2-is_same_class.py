@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+"""
+Check if the given object is an instance of the specified class.
+"""
+
 
 def is_same_class(obj, a_class):
     """
-    Check if the given object is an instance of the specified class.
-
     Args:
         obj: Any Python object.
         a_class: The class to check against.
