@@ -5,6 +5,7 @@ Base class for geometry-related operations.
 
 
 class BaseGeometry:
+    """The base geometry."""
 
     def area(self):
         """
