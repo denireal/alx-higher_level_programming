@@ -2,13 +2,9 @@
 
 class LockedClass:
     """
-    A class demonstrating the use of __slots__ to restrict attribute creation.
-
-    Attributes:
-        first_name (str): A string representing the first name of an instance
+    A class that restricts the creation of new instance attributes,
+    except for 'first_name'.
     """
-
-    __slots__ = ["first_name"]
 
     def __init__(self, first_name=""):
         """
@@ -17,4 +13,16 @@ class LockedClass:
         Parameters:
             first_name (str): The first name to be assigned.
         """
-        self.first_name = first_name
+        self.__dict__['first_name'] = first_name
+
+    def __setattr__(self, name, value):
+        """
+        Overrides the default setattr method to restrict attribute creation.
+
+        Parameters:
+            name (str): The name of the attribute.
+            value: The value to be assigned to the attribute.
+        """
+        if name != 'first_name':
+            raise AttributeError(f"'LockedClass' object has no attribute '{name}'")
+        self.__dict__[name] = value
