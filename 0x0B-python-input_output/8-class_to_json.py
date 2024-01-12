@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""
+Convert a class object to a JSON-serializable dictionary.
+"""
 import json
 
 
