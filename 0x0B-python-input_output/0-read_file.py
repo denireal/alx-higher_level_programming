@@ -1,15 +1,24 @@
 #!/usr/bin/python3
-
-# Author: Denyefa Wari
+"""
+Read content from a file.
+"""
 
 
 def read_file(filename=""):
     """
-    Read the content of a file and print it.
+    Read content from a file.
 
-    filename: The name of the file to be read.
+    Args:
+        filename (str): The name of the file to be read.
+
+    Raises:
+        Exception: For any unexpected errors during file reading.
     """
-    # Open the file in read mode ('r') with utf-8 encoding
-    with open(filename, encoding="utf-8") as f:
-        # Print the content without adding an extra newline at the end
-        print(f.read() end='')
+
+    try:
+        with open(filename, 'r', encoding="utf-8") as file:
+            read_data = file.read()
+            print(read_data, end='')
+    except Exception as e:
+        raise Exception(
+                f"Error: An error occurred while reading '{filename}': {e}")
