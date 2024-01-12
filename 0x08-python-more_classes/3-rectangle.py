@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""1-rectangle.py
+"""
 Module that defines a Rectangle class.
 """
 
@@ -80,7 +80,45 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
+    def area(self):
+        """
+        Calculates and returns the area of the rectangle.
+
+        Returns:
+            int: The area of the rectangle.
+        """
+        return self.__width * self.__height
+
+    def perimeter(self):
+        """
+        Calculates and returns the perimeter of the rectangle.
+
+        Returns:
+            int: The perimeter of the rectangle.
+        """
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return 2 * (self.__width + self.__height)
+
+    def __str__(self):
+        """
+        Returns a string representation of the rectangle using '#' symbols.
+
+        Returns:
+            str: The string representation of the rectangle.
+        """
+        if self.__width == 0 or self.__height == 0:
+            return ""
+
+        rect = []
+        for i in range(self.__height):
+            [rect.append('#') for j in range(self.__width)]
+            if i != self.__height - 1:
+                rect.append("\n")
+        return "".join(rect)
 
 # Author details
+
+
 __author__ = "Denyefa Wari"
 __email__ = "denny.wari@gmail.com"
