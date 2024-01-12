@@ -17,4 +17,3 @@ if __name__ == "__main__":
     # Save the updated list to the JSON file
     with open("add_item.json", 'w', encoding="utf-8") as file:
         dump(items, file)
-
