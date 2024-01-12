@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Print statistics including file size and HTTP status codes.
+"""
+
 
 def print_stats(size, status_codes):
     """
