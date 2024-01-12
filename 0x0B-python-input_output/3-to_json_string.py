@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 
 # Author: Denyefa Wari
+"""Convert a Python object to a JSON-formatted string."""
 
 import json
+
 
 def to_json_string(my_obj):
     """
