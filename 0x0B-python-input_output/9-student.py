@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Module defining a student class."""
 
 class Student:
     """
@@ -30,8 +31,4 @@ class Student:
         Returns:
             dict: A dictionary containing the attributes of the student.
         """
-        return {
-            "first_name": self.first_name,
-            "last_name": self.last_name,
-            "age": self.__age
-        }
+        return self.__dict__
