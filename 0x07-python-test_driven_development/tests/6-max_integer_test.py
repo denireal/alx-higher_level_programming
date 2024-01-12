@@ -2,8 +2,9 @@
 """
 Unit tests for the max_integer function.
 """
+
 import unittest
-from 6-max_integer import max_integer
+max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
@@ -57,13 +58,13 @@ class TestMaxInteger(unittest.TestCase):
         """
         Test max_integer with a string.
         """
-        self.assertEqual(max_integer("Denny"), 'r')
+        self.assertEqual(max_integer("Denyefa"), 'r')
 
     def test_list_of_strings(self):
         """
         Test max_integer with a list of strings.
         """
-        self.assertEqual(max_integer(["Denny", "is", "my", "name"]), "name")
+        self.assertEqual(max_integer(["Denyefa", "is", "my", "name"]), "name")
 
     def test_empty_string(self):
         """

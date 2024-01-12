@@ -7,14 +7,14 @@ def add_integer(a, b=98):
     Adds two integers.
 
     Parameters:
-    - a (int or float): The first number.
-    - b (int or float): The second number. Default is 98.
+    a (int or float): The first number.
+    b (int or float): The second number. Default is 98.
 
     Returns:
-    - int: The sum of a and b, both casted to integers if they are floats.
+    int: The sum of a and b, both casted to integers if they are floats.
 
     Raises:
-    - TypeError: If a or b is not an integer or float.
+    TypeError: If a or b is not an integer or float.
 
     Example:
     >>> add_integer(5, 10.5)
