@@ -20,10 +20,10 @@ def pascal_triangle(n):
     triangle = [[1]]
 
     for current_row in range(1, n):
-        row = [1]
-        for current_element in range(1, current_row):
-            row.append(triangle[current_row-1][current_element-1] +
-			triangle[current_row-1][current_element])
+    row = [1]
+    for current_element in range(1, current_row):
+        row_append(triangle[current_row-1][current_element-1] +
+                   triangle[current_row-1][current_element])
         row.append(1)
         triangle.append(row)
 

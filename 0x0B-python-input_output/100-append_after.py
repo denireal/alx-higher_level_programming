@@ -1,10 +1,12 @@
 #!/usr/bin/python3
+"""
+Append a new string after each occurrence of a specified search
+string in a file.
+"""
+
 
 def append_after(filename="", search_string="", new_string=""):
     """
-    Append a new string after each occurrence of a specified search string
-	in a file.
-
     Args:
         filename (str): The name of the file.
         search_string (str): The string to search for in each line.
