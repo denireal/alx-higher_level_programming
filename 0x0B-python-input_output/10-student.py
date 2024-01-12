@@ -16,10 +16,10 @@ class Student:
         Method that returns a dictionary description.
 
         Args:
-            attrs (list): A list of attribute names to include in the dictionary.
+            attrs (list): A list of attribute names.
 
         Returns:
-            dict: A dictionary containing the specified attributes or all attributes if 'attrs' is None.
+            dict: A dictionary containing the specified attributes.
         """
         obj = self.__dict__.copy()
 
