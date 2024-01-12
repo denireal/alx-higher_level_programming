@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Class to create student instances."""
+
 
 class Student:
     """Class to create student instances."""
@@ -14,10 +16,10 @@ class Student:
         Method that returns a dictionary description.
 
         Args:
-            attrs (list): A list of attribute names to include in the dictionary.
+            attrs (list): A list of attribute names.
 
         Returns:
-            dict: A dictionary containing the specified attributes or all attributes if 'attrs' is None.
+            dict: A dictionary containing the specified attributes.
         """
         if attrs is None:
             return self.__dict__.copy()
@@ -26,7 +28,7 @@ class Student:
 
     def reload_from_json(self, json):
         """
-        Method that updates instance attributes from a JSON-formatted dictionary.
+        Method that updates instance attributes from a JSON-formatted dict.
 
         Args:
             json (dict): A dictionary containing attribute-value pairs.
