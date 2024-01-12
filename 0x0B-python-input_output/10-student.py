@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Class to create student instances."""
+
 
 class Student:
     """Class to create student instances."""
