@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
-# Author: Denyefa Wari
+"""
+Function that appends to a text file.
+"""
+
 
 def append_write(filename, text):
     """
