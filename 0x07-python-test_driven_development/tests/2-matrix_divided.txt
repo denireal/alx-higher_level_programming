@@ -1,69 +1,86 @@
 """
-Module providing a matrix_divided function for matrix division.
+The ``2-matrix_divided`` module
+============================
+
+1. Example usage
+----------------
+
+2. Import the function from the module:
+
+3. >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+4. Example: Dividing a matrix by 3
+
+5. >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+6. Returns: [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+7. Example: Dividing a matrix by 0
+
+8. >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+9. Raises: ZeroDivisionError: division by zero
+
+10. Example: Dividing a matrix by a float number
+
+11. >>> matrix_divided([[10, 20, 30], [1.33, 3.74, 6.89], [-8, -9.71, 0]], 5.3)
+12. Returns: [[1.89, 3.77, 5.66], [0.25, 0.71, 1.3], [-1.51, -1.83, 0.0]]
+
+13. Example: Passing an empty matrix
+
+14. >>> matrix_divided([], 10)
+15. Raises: TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+16. Example: Passing a tuple as an argument
+
+17. >>> matrix_divided((3, 6, 9), 3)
+18. Raises: TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+19. Example: Dividing a matrix with rows of different sizes
+
+20. >>> matrix_divided([[22, 34], [2.78, 7.1, -10, 2], [-8]], 3)
+21. Raises: TypeError: Each row of the matrix must have the same size
+
+22. Example: Dividing a matrix with rows of different sizes (case 2)
+
+23. >>> matrix_divided([[2, 4], [6.8], [10, 12]], 12)
+24. Raises: TypeError: Each row of the matrix must have the same size
+
+25. Example: Dividing a matrix with non-numeric elements
+
+26. >>> matrix_divided([["Hello", "World"], ["Hello", "Holberton"]], 10)
+27. Raises: TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+28. Example: Dividing a matrix with non-numeric elements (case 2)
+
+29. >>> matrix_divided([["1"], ["2", "3"], ["5", "6", "7"]], 10)
+30. Raises: TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+31. Example: Dividing a matrix with some non-numeric elements
+
+32. >>> matrix_divided([[2.7, 4], ['6', 8.4], [10.1, '12'], [5.3, '10.2', 15.8]], 5)
+33. Raises: TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+34. Example: Passing a matrix with an element as an empty list
+
+35. >>> matrix_divided([[2.1, 5.8], [], [10, -3]], 8)
+36. Raises: TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+37. Example: Passing a matrix with an element as a tuple
+
+38. >>> matrix_divided([[1, -1], (2, -2), [3, -3]], 1)
+39. Raises: TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+40. Example: Passing div as a list
+
+41. >>> matrix_divided([[5.7, 8.1], [7.7, 4.9]], [2])
+42. Raises: TypeError: div must be a number
+
+43. Example: Passing div as a string
+
+44. >>> matrix_divided([[10, 50], [30, 20]], "10")
+45. Raises: TypeError: div must be a number
+
+46. Example: Dividing a matrix with positive and negative integer/float numbers
+
+47. >>> matrix_divided([[-1, 3.1, 0], [78, -103.7, 54]], 9.2)
+48. Returns: [[-0.11, 0.34, 0.0], [8.48, -11.27, 5.87]]
 """
-
-# Importing function from the module:
-matrix_divided = __import__('2-matrix_divided').matrix_divided
-
-# Dividing a matrix by 3:
-matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
-# Output: [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
-
-# Dividing a matrix by 0:
-matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
-# Output: ZeroDivisionError: division by zero
-
-# Dividing a matrix by a float number:
-matrix_divided([[10, 20, 30], [1.33, 3.74, 6.89], [-8, -9.71, 0]], 5.3)
-# Output: [[1.89, 3.77, 5.66], [0.25, 0.71, 1.3], [-1.51, -1.83, 0.0]]
-
-# Passing an empty matrix:
-matrix_divided([], 10)
-# Output: TypeError: matrix must be a matrix (list of lists) of integers/floats
-
-# Passing a tuple as an argument:
-matrix_divided((3, 6, 9), 3)
-# Output: TypeError: matrix must be a matrix (list of lists) of integers/floats
-
-# Dividing a matrix which its rows don't have the same size:
-matrix_divided([[22, 34], [2.78, 7.1, -10, 2], [-8]], 3)
-# Output: TypeError: Each row of the matrix must have the same size
-
-# Dividing a matrix which its rows don't have the same size 2:
-matrix_divided([[2, 4], [6.8], [10, 12]], 12)
-# Output: TypeError: Each row of the matrix must have the same size
-
-# Dividing a matrix which its elements aren't integer/float numbers:
-matrix_divided([["Hello", "World"], ["Hello", "Holberton"]], 10)
-# Output: TypeError: matrix must be a matrix (list of lists) of integers/floats
-
-# Dividing a matrix which its elements aren't integer/float numbers 2:
-matrix_divided([["1"], ["2", "3"], ["5", "6", "7"]], 10)
-# Output: TypeError: matrix must be a matrix (list of lists) of integers/floats
-
-# Dividing a matrix which some of its elements aren't integer/float numbers:
-matrix_divided([[2.7, 4], ['6', 8.4], [10.1, '12'], [5.3, '10.2', 15.8]], 5)
-# Output: TypeError: matrix must be a matrix (list of lists) of integers/floats
-
-# Passing a matrix which one of its elements is an empty list:
-matrix_divided([[2.1, 5.8], [], [10, -3]], 8)
-# Output: TypeError: matrix must be a matrix (list of lists) of integers/floats
-
-# Passing a matrix which one of its elements is a tuple:
-matrix_divided([[1, -1], (2, -2), [3, -3]], 1)
-# Output: TypeError: matrix must be a matrix (list of lists) of integers/floats
-
-# Passing div as a list:
-matrix_divided([[5.7, 8.1], [7.7, 4.9]], [2])
-# Output: TypeError: div must be a number
-
-# Passing div as a string:
-matrix_divided([[10, 50], [30, 20]], "10")
-# Output: TypeError: div must be a number
-
-# Dividing a matrix which has positive and negative integer/float numbers:
-matrix_divided([[-1, 3.1, 0], [78, -103.7, 54]], 9.2)
-# Output: [[-0.11, 0.34, 0.0], [8.48, -11.27, 5.87]]
-
-# Displaying the summary:
-print("5 passed and 0 failed.\nTest passed.")
