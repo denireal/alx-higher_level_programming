@@ -7,89 +7,79 @@ on using the ``add_integer`` function from the ``0-add_integer`` module.
 To get started, import the ``add_integer`` function
 from the ``0-add_integer`` module:
 
-    >>> add_integer = __import__('0-add_integer').add_integer
+ >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(3, 5)
+    8
 
-Ensure the presence of a module docstring:
+    >>> add_integer(3, -5)
+    -2
 
-    >>> m = __import__("0-add_integer").__doc__
-    >>> len(m) > 1
-    True
+Handling floating-point values.
 
-Confirm the existence of a function docstring:
+    >>> add_integer(3.0, 5.0)
+    8
 
-    >>> f = __import__("0-add_integer").add_integer.__doc__
-    >>> len(f) > 1
-    True
+    >>> add_integer(3.8, 0.2)
+    4
 
-Basic usage example:
+    >>> add_integer(-3.8, -0.2)
+    -4
 
-    >>> add_integer(1, 2)
-    3
+Handling the combination of floating and non-floating point
 
-Test with a single integer argument:
+    >>> add_integer(2.3, -3)
+    -1
+
+The second argument is optional - by default, it is 98.
 
     >>> add_integer(2)
     100
 
-Test with an integer argument and observe the default second parameter:
+Non-Numeric Inputs
+==================
 
-    >>> add_integer(0)
-    98
+The function add_integer(a, b) requires both parameters to be integers or floats.
+If either of the arguments is not an integer or a float, a TypeError will be triggered.
 
-Perform addition with a positive and a negative number:
-
-    >>> add_integer(2, -4)
-    -2
-
-Perform addition with a negative and a positive number:
-
-    >>> add_integer(-6, 8)
-    2
-
-Evaluate addition over a range of values:
-
-    >>> [add_integer(i, i ** 2) for i in range(6)]
-    [0, 2, 6, 12, 20, 30]
-
-Examine with a float and a negative input:
-
-    >>> add_integer(100.3, -2)
-    98
-
-Handle float overflow:
-
-    >>> add_integer(1500.5)
-    1598
-
-Handle float NaN:
-
-    >>> add_integer(float('NaN'))
+    >>> add_integer("hello", 3)
     Traceback (most recent call last):
-    ...
-    ValueError: cannot convert float NaN to integer
+    TypeError: a must be an integer
 
-Handle string input:
-
-    >>> add_integer(4, "School")
+    >>> add_integer(2, "hello")
     Traceback (most recent call last):
-    ...
     TypeError: b must be an integer
-
-Handle None input:
 
     >>> add_integer(None)
     Traceback (most recent call last):
-    ...
     TypeError: a must be an integer
 
-Evaluate with double negative float input:
-
-    >>> add_integer(-100.5, -10.8)
-    -110
-
-Evaluate with double string input:
-
-    >>> add_integer("holberton", "school")
+    >>> add_integer(2.3, None)
     Traceback (most recent call last):
-    ...
+    TypeError: b must be an integer
+
+If both parameters are neither integers nor floats, a TypeError message will be
+displayed exclusively for the first argument.
+
+    >>> add_integer("hello", "there")
+    Traceback (most recent call last):
     TypeError: a must be an integer
+
+Function will raise an OverflowError if infinity is provided.
+
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(2, float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+Another NaN numbers operation.
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+
+    >>> add_integer(2, float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
