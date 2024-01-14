@@ -58,7 +58,8 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_ints_and_floats(self):
         """
-        Test max_integer function with a list containing both integers and floats
+        Test max_integer function with a list containing both
+        integers and floats
         """
         ints_and_floats = [1.53, 15.5, -9, 15, 6]
         self.assertEqual(max_integer(ints_and_floats), 15.5)
@@ -82,6 +83,7 @@ class TestMaxInteger(unittest.TestCase):
         Test max_integer function with an empty string
         """
         self.assertEqual(max_integer(""), None)
+
 
 if __name__ == '__main__':
     unittest.main()
