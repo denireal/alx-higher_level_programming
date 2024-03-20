@@ -14,7 +14,7 @@ if __name__ == "__main__":
 SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY states.id ASC"""
     query = query.format(argv[4])
     cnew.execute(query)
-    query_rows = cur.fetchall()
+    query_rows = cnew.fetchall()
     for row in query_rows:
         print(row)
     cnew.close()
