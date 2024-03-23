@@ -9,19 +9,19 @@ from sqlalchemy.orm import Session
 
 
 def print_state():
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}?autocommit=true".format(
         sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
     session = Session(engine)
+    first_state = session.query(State).order_by(State.id).first()
 
-    rows = session.query(State).all()
-
-    for rows_ in rows:
-        print("{}: {}".format(rows_.__dict__['id'], rows_.__dict__['name']))
-
-
+if first_state:
+    print("{}: {}".format(first_state.id, first_state.name))
+else:
+    print("Nothing")
     session.close()
+
 
 if __name__ == "__main__":
     print_state()
