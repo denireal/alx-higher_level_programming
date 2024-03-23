@@ -21,5 +21,3 @@ if __name__ == "__main__":
     rows_ = cursor.fetchall()
     for row in rows_:
         print(row)
-        curs.close()
-        conn.close()
