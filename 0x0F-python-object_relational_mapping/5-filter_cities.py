@@ -27,6 +27,7 @@ if __name__ == "__main__":
             cursor.close()
             database.close()
         except MySQLdb.Error as error:
-                print("MySQL Error:", error)
+            print("MySQL Error:", error)
     else:
-        print("Usage: {} <username> <password> <database> <state>".format(sys.argv[0]))
+        print("Usage: {} <username> <password> <database> <state>".format(
+            sys.argv[0]))
