@@ -26,7 +26,7 @@ if __name__ == "__main__":
             print(", ".join(cities))
             cursor.close()
             database.close()
-            except MySQLdb.Error as error:
+        except MySQLdb.Error as error:
                 print("MySQL Error:", error)
-                else:
-                    print("Usage: {} <username> <password> <database> <state>".format(sys.argv[0]))
+    else:
+        print("Usage: {} <username> <password> <database> <state>".format(sys.argv[0]))
