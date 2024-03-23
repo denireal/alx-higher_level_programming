@@ -2,20 +2,31 @@
 """Script that list all cities of a state
 """
 
-
-import sys
 import MySQLdb
+import sys
 
+if __name__ == "__main__":
+    if len(sys.argv) == 5:
+        try:
+            database = MySQLdb.connect(
+                    host="localhost",
+                    port=3306,
+                    user=sys.argv[1],
+                    passwd=sys.argv[2],
+                    db=sys.argv[3])
+            cursor = database.cursor()
+            # Using parameterized query to prevent SQL injection
+            cursor.execute("SELECT cities.name FROM cities\
+                    JOIN states ON cities.state_id = states.id\
+                    AND states.name = %s\
+                    ORDER BY cities.id ASC", (sys.argv[4],))
 
-if __name__ == '__main__':
-    db_connect = MySQLdb.connect(
-            user=sys.argv[1],
-            passwd=sys.argv[2],
-            db=sys.argv[3],
-            port=3306)
-    db_cur = db.cursor()
-    db_cur.execute("SELECT cities.id, cities.name, states.name \
-            FROM cities JOIN states ON cities.state_id = states.id \
-            WHERE states.name = '{}';".format(sys.argv[4]))
-    states = cur.fetchall()
-    print(", ".join([state[1] for state in states]))i
+            rows_data = cursor.fetchall()
+            cities = [row[0] for row in rows_data]
+            print(", ".join(cities))
+            cursor.close()
+            database.close()
+            except MySQLdb.Error as error:
+                print("MySQL Error:", error)
+                else:
+                    print("Usage: {} <username> <password> <database> <state>".format(sys.argv[0]))
