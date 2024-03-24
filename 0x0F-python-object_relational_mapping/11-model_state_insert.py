@@ -35,7 +35,7 @@ if __name__ == "__main__":
     # Add a new State object to the database
     state = State(name='Louisiana')
     sess.add(state)
-    
+
     # Query the newly added State object by name and print its ID
     state_query = sess.query(State).filter_by(name='Louisiana').first()
     print(state_query.id)
