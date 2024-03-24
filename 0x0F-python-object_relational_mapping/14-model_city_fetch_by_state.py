@@ -5,49 +5,27 @@ from the database
 """
 import sys
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session
 from model_state import Base, State
 from model_city import City
 
 
-def print_state_with_cities(username, password, database, state_name):
-    """Prints the State object with associated cities."""
-    # Create engine to connect to the database
-    engine = create_engine(
-            f'mysql+mysqldb://{username}:{password}@localhost:3306/{database}')
+def display_city():
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(
+        sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
-    # Create session
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = Session(engine)
 
-    try:
-        # Query State and associated City objects
-        result = (session.query(State.name, City.id, City.name)
-                  .filter(State.id == City.state_id, State.name == state_name)
-                  .all())
+    rows = session.query(State, City).join(City).all()
 
-        # Print State and associated City information
-        for state_name, city_id, city_name in result:
-            print(f"{state_name}: ({city_id}) {city_name}")
+    for ins in rows:
+        print("{}: ({}) {}".format(ins[0].__dict__['name'],
+                                   ins[1].__dict__['id'],
+                                   ins[1].__dict__['name']))
 
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
-    finally:
-        # Close session
-        session.close()
+    session.close()
 
 
 if __name__ == "__main__":
-    # Check if the correct number of command-line arguments is provided
-    if len(sys.argv) != 5:
-        print("Usage: {} <username> <password> <database> <state_name>".format(
-            sys.argv[0]))
-        sys.exit(1)
-
-    # Extract command-line arguments
-    username, password, database, state_name = sys.argv[1:]
-
-    # Call the function to print State object with associated cities
-    print_state_with_cities(username, password, database, state_name)
+    display_city()
