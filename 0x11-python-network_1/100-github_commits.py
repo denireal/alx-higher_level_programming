@@ -16,19 +16,19 @@ if __name__ == "__main__":
 
         # Extract repository name and username from command-line arguments
         repo, user = sys.argv[1], sys.argv[2]
-        
+
         # Construct the URL for retrieving commits
         commits_url = f"https://api.github.com/repos/{user}/{repo}/commits"
-        
+
         # Send a GET request to the commits URL
         response = requests.get(commits_url)
-        
+
         # Ensure a successful response
         response.raise_for_status()
-        
+
         # Parse the JSON response
         commits_data = response.json()
-        
+
         # Print information about recent commits
         for commit in commits_data[:10]:
             sha = commit['sha']
