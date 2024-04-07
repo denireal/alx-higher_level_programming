@@ -25,8 +25,7 @@ class Base:
             instance_id (int): Identifier for the instance.
 			If None, auto-generates a unique ID.
         """
-        self.id = instance_id if instance_id is not None
-		else Base.__nb_objects + 1
+        self.id = instance_id if instance_id is not None else Base.__nb_objects + 1
         Base.__nb_objects += 1
 
     @classmethod
@@ -171,7 +170,8 @@ class Base:
             list: List of fieldnames.
         """
         return ['id', 'width', 'height', 'x', 'y']
-		if cls.__name__ == "Rectangle" else ['id', 'size', 'x', 'y']
+		if cls.__name__ == "Rectangle"
+                else ['id', 'size', 'x', 'y']
 
     @staticmethod
     def cast_to_int(obj):
